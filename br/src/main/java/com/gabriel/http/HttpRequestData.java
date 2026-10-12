@@ -1,4 +1,4 @@
-package com.gabriel;
+package com.gabriel.http;
 
 import java.util.Map;
 import java.util.Objects;

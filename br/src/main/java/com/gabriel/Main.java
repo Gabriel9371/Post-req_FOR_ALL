@@ -1,11 +1,17 @@
 package com.gabriel;
 
-public class Main {
-    public static void main(String[] args) {
-        var r = new HttpRequestData("GET", "http://localhost", null, null);
-        var nr = new HttpResponseData(200, null, null, 6);
+import com.gabriel.http.HttpEngine;
+import com.gabriel.http.HttpRequestData;
+import com.gabriel.http.HttpResponseData;
 
-        System.out.println(r);
-        System.out.println(nr);
+import java.util.Map;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        HttpEngine engine = new HttpEngine();
+        HttpResponseData res = engine.send(new HttpRequestData("GET", "https://httpbin.org/get", Map.of(), null));
+
+        System.out.println(res.status() + " em " + res.ms() + "ms");
+        System.out.println(res.body());
     }
 }
