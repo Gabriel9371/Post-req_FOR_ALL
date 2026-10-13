@@ -1,19 +1,36 @@
 # Requisições Portátil
 
-Uma ferramenta portátil para gerenciamento e teste de requisições HTTP, desenvolvida para facilitar o trabalho em ambientes onde não é possível instalar programas livremente.
-<br>
+Ferramenta portátil e com interface gráfica para testar requisições HTTP, feita para ambientes onde não é possível instalar programas.
 
-Na faculdade e no computador da empresa onde trabalho, não possuo permissão para instalar programas livremente. Isso dificulta o uso de ferramentas tradicionais para testar APIs e realizar requisições HTTP, como **GET, POST, PUT e DELETE**.
+Na faculdade e no trabalho eu não tenho permissão de administrador, o que impede o uso de ferramentas tradicionais para testar APIs. Este projeto é um único arquivo `.jar` que roda direto, sem instalação e sem privilégios administrativos.
 
-A proposta deste projeto é criar uma ferramenta **plug and play**, que possa ser executada diretamente sem necessidade de instalação ou privilégios administrativos, permitindo realizar testes de APIs de forma simples e prática.
+## Como usar
 
-### Funcionalidades iniciais
+Requisito: **Java 17 ou superior**.
 
-A primeira versão terá suporte para:
+1. Baixe o `ReqResPortable.jar` na aba [Releases](../../releases).
+2. Dê dois cliques no arquivo, ou rode no terminal:
+ java -jar ReqResPortable.jar
 
-* **GET** — realizar requisições para consultar dados;
-* **GET por ID** — consultar um recurso específico através de seu identificador;
-* **POST** — enviar dados para criação de novos recursos;
-* **DELETE** — remover recursos.
+ 
+## Funcionalidades
 
-Futuramente, o projeto poderá receber novos métodos HTTP, gerenciamento de headers, autenticação, histórico de requisições, configuração de parâmetros e outras funcionalidades para facilitar o desenvolvimento e os testes de APIs.
+- Métodos GET, POST, PUT, PATCH e DELETE
+- Headers e body da requisição editáveis
+- Status, tempo de resposta, headers e body da resposta
+- Tema escuro
+- Mensagens de erro claras (URL inválida, timeout, falha de conexão)
+- Sem dependências externas: usa apenas o JDK
+
+## Compilando
+
+Requer JDK 17+ e Maven: mvn clean package
+
+
+O arquivo gerado fica em `target/ReqResPortable.jar`.
+
+## Futuramente: 
+
+- Formatação automática de JSON na resposta
+- Histórico de requisições
+- Autenticação e parâmetros de query
